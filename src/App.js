@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="todo-container">
+        <div className="todo-wrap">
+          <div className="todo-header">
+            <input type="text" placeholder="请输入你的任务名称，按回车键确认" />
+          </div>
+          <ul className="todo-main">
+            <li>
+              <label>
+                <input type="checkbox" />
+                <span>xxxxx</span>
+              </label>
+              <button className="btn btn-danger" style={{display:"none"}}>
+                删除
+              </button>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" />
+                <span>yyyy</span>
+              </label>
+              <button className="btn btn-danger"  style={{display:"none"}}>
+                删除
+              </button>
+            </li>
+          </ul>
+          <div className="todo-footer">
+            <label>
+              <input type="checkbox" />
+            </label>
+            <span>
+              <span>已完成0</span> / 全部2
+            </span>
+            <button className="btn btn-danger">清除已完成任务</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
