@@ -11,12 +11,15 @@ export default class App extends Component {
       { id: '3', name: '打豆豆', done: false },
     ],
   };
+  addTodo = (todo) => {
+    this.setState({ todos: [todo, ...this.state.todos] });
+  };
   render() {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header />
-          <List todos={this.state.todos}/>
+          <Header addItem={this.addTodo} />
+          <List todos={this.state.todos} />
           <Footer />
         </div>
       </div>
